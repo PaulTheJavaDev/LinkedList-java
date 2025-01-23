@@ -26,15 +26,18 @@ public class Main {
         return revLinkedList;
     }
 
-    public static long digPow(int n, int p) {
+    public static ListNode removeDuplicates(ListNode head) {
+    ListNode current = head;
 
-        String stringN = String.valueOf(n);
-
-        for (int i = 0; i < stringN.length(); i++) {
-            System.out.println(stringN.indexOf(i)); //always outputs -1
+    while (current != null && current.next != null) {
+        if (current.val == current.next.val) {
+            current.next = current.next.next;
+        } else {
+            current = current.next;
         }
-
-        return -1; //doesn't affect the printing
     }
+
+    return head;
+}
 
 }
